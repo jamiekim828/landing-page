@@ -70,15 +70,24 @@ section {
   padding-left: 0;
   margin: 0;
   text-align: center;
+  background-color: rgba(0, 13, 60, 1);
 }
 
 .navbar__menu li {
   display: inline-block;
+  font-size: 33px;
+  padding: 18px;
 }
 
 .navbar__menu li a {
   text-decoration: none;
+  color: #fff;
+}
+
+.navbar__menu li a:hover {
   color: #000;
+  background-color: rgb(231, 241, 139);
+  border-left: thick solid rgb(42, 219, 250);
 }
 
 .navbar__menu .menu__link {
@@ -95,13 +104,62 @@ section {
   transition: ease 0.3s all;
 }
 
+.dropbtn {
+  border: none;
+  background-color: coral;
+  color: white;
+  margin: 20px;
+  padding: 5px;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+#myDropdown {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  right: 0;
+  z-index: 1;
+}
+
+#myDropdown > a {
+  padding: 0 20px;
+  text-decoration: none;
+  display: block;
+}
+
 /* Header Styles */
 .page__header {
-  background: #fff;
+  background: rgba(0, 13, 60, 1);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 5;
+}
+
+/* active class */
+section.your-active-class {
+  background-color: rgb(248, 162, 64) !important;
+}
+
+/* top button */
+.top-link {
+  border-width: thick;
+  border-color: coral;
+  font-size: xx-large;
+  /* align-items: center; */
+  /* justify-items: center; */
+  color: coral;
+  padding: 17px;
 }
 
 /* Footer Styles */

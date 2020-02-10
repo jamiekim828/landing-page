@@ -42,7 +42,9 @@ for (let i = 0; i < sections.length; i++) {
   navLi.innerHTML = `<a href="#${currentSectionId}">${currentSection}</a>`;
   navBar.appendChild(navLi);
 
-  navLi.addEventListener('click', scrollToAnchor());
+  navLi.addEventListener('click', () => {
+    scrollToAnchor();
+  });
 }
 
 // Add class 'active' to section when near top of viewport
@@ -93,10 +95,11 @@ function scrollToAnchor() {
 // add scroll to top button
 // https://getflywheel.com/layout/sticky-back-to-top-button-tutorial/
 
-var scrollToTopButton = document.createElement('button');
+const scrollToTopButton = document.createElement('button');
 scrollToTopButton.innerHTML = 'TOP';
-var main = document.getElementsByTagName('main')[0];
+const main = document.getElementsByTagName('main')[0];
 main.appendChild(scrollToTopButton);
+
 const scrollFunc = () => {
   let y = window.scrollY;
   if (y > 0) {
@@ -127,7 +130,51 @@ scrollToTopButton.onclick = function(e) {
  */
 
 // Build menu
+// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_right
+const menuButton = document.createElement('button');
+menuButton.setAttribute('class', 'dropbtn');
+menuButton.innerHTML = 'MENU';
+const navMenu = document.getElementsByClassName('page__header')[0];
+navMenu.appendChild(menuButton);
+menuButton.addEventListener('click', myFunction());
 
-// Scroll to section on link click
+const menuDiv = document.createElement('div');
+menuDiv.setAttribute('id', 'myDropdown');
+navMenu.appendChild(menuDiv);
 
-// Set sections as active
+const text = ['HOME', 'ABOUT', 'CONTACT'];
+for (let i = 0; i < text.length; i += 1) {
+  const dropText = document.createElement('a');
+  dropText.innerHTML = `<a href="#${text[i]}">${text[i]}</a>`;
+  menuDiv.setAttribute('id', 'myDropdown');
+  const dropDiv = document.getElementById('myDropdown');
+  dropDiv.appendChild(dropText);
+}
+
+function myFunction() {
+  //   document.getElementById('myDropdown').classList.toggle('show');
+}
+// window.onclick = function(event) {
+//   if (!event.target.matches('.dropbtn')) {
+//     const dropdowns = document.getElementById('myDropdown');
+//
+//     for (let i = 0; i < dropdowns.length; i++) {
+//       let openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// };
+
+// hide menu
+let oldScroll = 0;
+let currentScroll = 0;
+setTimeout(function() {
+  if (currentScroll === oldScroll) {
+    document.querySelector('.page__header').style.visibility = 'hidden';
+  } else {
+    document.querySelector('.page__header').style.visibility = 'visible';
+  }
+  oldScroll = currentScroll;
+}, 10000);
