@@ -131,41 +131,45 @@ scrollToTopButton.onclick = function(e) {
 
 // Build menu
 // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_right
+
 const menuButton = document.createElement('button');
 menuButton.setAttribute('class', 'dropbtn');
-menuButton.innerHTML = 'MENU';
+menuButton.innerHTML = 'MENU<i class="fa fa-angle-right"></i>';
 const navMenu = document.getElementsByClassName('page__header')[0];
 navMenu.appendChild(menuButton);
-menuButton.addEventListener('click', myFunction());
 
 const menuDiv = document.createElement('div');
 menuDiv.setAttribute('id', 'myDropdown');
 navMenu.appendChild(menuDiv);
 
 const text = ['HOME', 'ABOUT', 'CONTACT'];
-for (let i = 0; i < text.length; i += 1) {
+for (let i = 0; i < text.length; i++) {
   const dropText = document.createElement('a');
   dropText.innerHTML = `<a href="#${text[i]}">${text[i]}</a>`;
   menuDiv.setAttribute('id', 'myDropdown');
+  menuDiv.setAttribute('class', 'dropdown-content');
   const dropDiv = document.getElementById('myDropdown');
   dropDiv.appendChild(dropText);
 }
 
+menuButton.addEventListener('click', myFunction());
+
 function myFunction() {
-  //   document.getElementById('myDropdown').classList.toggle('show');
+  console.log('hello');
+  document.getElementById('myDropdown').classList.toggle('show');
 }
-// window.onclick = function(event) {
-//   if (!event.target.matches('.dropbtn')) {
-//     const dropdowns = document.getElementById('myDropdown');
-//
-//     for (let i = 0; i < dropdowns.length; i++) {
-//       let openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//       }
-//     }
-//   }
-// };
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    const dropdowns = document.getElementsByClassName('dropdown-content');
+
+    for (let i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};
 
 // hide menu
 let oldScroll = 0;
