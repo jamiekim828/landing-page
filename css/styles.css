@@ -10,6 +10,7 @@
 
 /* ---- Base Rules ---- */
 body {
+  position: relative;
   background: rgb(136, 203, 171);
   background: linear-gradient(
     0deg,
@@ -237,3 +238,5 @@ section.your-active-class .landing__container::after {
     transform: rotate(360deg) translate(-1em) rotate(-360deg);
   }
 }
+
+/* scroll to top */
