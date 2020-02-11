@@ -1,13 +1,16 @@
-# Landing Page Project
+# Landing Page
 
-## Table of Contents
+## Project Goal
 
-* [Instructions](#instructions)
+This project requires you to build a multi-section landing page, with a dynamically updating navigational menu based on the amount of content that is added to the page. To complete the project will mostly require modifying the js/app.js file, as well as modifications to the index.html and css/styles.css files to further update and customize.
 
-## Instructions
+## JavaScript
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+This landing page demonstrates the use of Javascript to manipulate the DOM.
+All Javasrcipt code written by Sooyoung Kim
 
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+1. All features are usable across modern desktop, tablet, and phone browsers.
+2. It should be clear which section is being viewed while scrolling through the page.
+3. Navigation is built dynamically as an unordered list.
+4. When clicking an item from the navigation menu, the link should scroll to the appropriate section.
+5. Styling has been added for active states.
