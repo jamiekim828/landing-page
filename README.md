@@ -7,7 +7,7 @@ This project requires you to build a multi-section landing page, with a dynamica
 ## JavaScript
 
 This landing page demonstrates the use of Javascript to manipulate the DOM.
-All Javasrcipt code written by Sooyoung Kim
+### All Javasrcipt code written by Sooyoung Kim
 
 1. All features are usable across modern desktop, tablet, and phone browsers.
 2. It should be clear which section is being viewed while scrolling through the page.
