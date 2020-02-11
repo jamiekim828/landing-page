@@ -27,7 +27,6 @@ const addSection = () => {
 
   newSection.setAttribute('id', 'section4');
   newSection.setAttribute('data-nav', 'section 4');
-  newSection.setAttribute('class', 'your-active-class');
   menu.appendChild(newSection);
 
   const newDiv = document.createElement('div');
@@ -49,7 +48,6 @@ document.addEventListener('DOMContentLoaded', addSection);
 // build the nav
 const addNav = () => {
   const sections = document.querySelectorAll('section');
-  console.log('addNav', sections);
   for (let i = 0; i < sections.length; i++) {
     const navLi = document.createElement('li');
 
@@ -72,17 +70,17 @@ document.addEventListener('DOMContentLoaded', addNav);
 //https://codepen.io/josephyoung83/pen/bNvpdR?editors=1010
 // https://www.w3schools.com/howto/howto_js_add_class.asp
 function isElementInViewport(el) {
-  var rect = el.getBoundingClientRect();
-  return (
-    rect.top > 0 &&
-    rect.left > 0 &&
-    rect.bottom <
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right < (window.innerWidth || document.documentElement.clientWidth)
-  );
+  let rect = el.getBoundingClientRect();
+  const view = rect.bottom <= window.innerHeight;
+
+  return view;
 }
 
+// window.addEventListener('scroll', isElementInViewport());
+
 window.addEventListener('scroll', function() {
+  const sections = document.querySelectorAll('section');
+
   for (const section of sections) {
     if (isElementInViewport(section)) {
       section.classList.add('your-active-class');
