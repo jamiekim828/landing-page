@@ -163,20 +163,26 @@ section {
   z-index: 5;
 }
 
-/* active class */
-section.your-active-class {
-  background-color: rgb(248, 162, 64) !important;
-}
-
 /* top button */
 .top-link {
+  position: fixed;
+  bottom: 10px;
+  float: right;
+  right: 18.5%;
+  left: 77.25%;
+  max-width: 100px;
+  width: 100%;
   border-width: thick;
   border-color: coral;
   font-size: xx-large;
   /* align-items: center; */
   /* justify-items: center; */
   color: coral;
-  padding: 17px;
+  padding: 0.5px;
+  border-radius: 4px;
+}
+.top-link:hover {
+  background-color: #7dbbf1;
 }
 
 /* Footer Styles */
@@ -286,11 +292,11 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
-  background: rgb(0, 0, 0);
+  background: rgb(248, 162, 64);
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(243, 88, 88, 0.5) 100%,
+    rgba(243, 50, 50, 0.7) 100%
   );
 }
 
@@ -298,7 +304,6 @@ section.your-active-class .landing__container::before {
   opacity: 1;
   animation: rotate 4s linear 0s infinite forwards;
 }
-
 section.your-active-class .landing__container::after {
   opacity: 1;
   animation: rotate 5s linear 0s infinite forwards reverse;

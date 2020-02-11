@@ -20,20 +20,52 @@
 const sections = document.querySelectorAll('section');
 const navBar = document.querySelector('#navbar__list');
 
+// add section
+const addSection = () => {
+  const menu = document.querySelector('main');
+  const newSection = document.createElement('section');
+
+  newSection.setAttribute('id', 'section4');
+  newSection.setAttribute('data-nav', 'section 4');
+  newSection.setAttribute('class', 'your-active-class');
+  menu.appendChild(newSection);
+
+  const newDiv = document.createElement('div');
+  newDiv.setAttribute('class', 'landing__container');
+  newSection.appendChild(newDiv);
+
+  const newh2 = document.createElement('h2');
+  newh2.innerText = 'Section 4';
+  newDiv.appendChild(newh2);
+
+  const newp = document.createElement('p');
+  newp.innerText =
+    "In de tuin van het huis van de March Hare (Maartse Haas) houdt deze een thee-feestje met de Mad Hatter (hoedenmaker) en de Dormouse (Slaapmuis of Zevenslaper). Omdat ze ruzie hebben gehad met Time[1], is het er permanent theetijd, zes uur 's middags. De Dormouse vertelt een raar verhaal over drie zusjes die in een put vol met stroop wonen. Uiteindelijk gaat Alice maar weg. Ze komt weer terecht bij de toegang tot de prachtige tuin. Deze keer doet ze alles goed, en kan ze door het kleine deurtje.";
+  newDiv.appendChild(newp);
+};
+
+document.addEventListener('DOMContentLoaded', addSection);
+
 // build the nav
-for (let i = 0; i < sections.length; i++) {
-  const navLi = document.createElement('li');
+const addNav = () => {
+  const sections = document.querySelectorAll('section');
+  console.log('addNav', sections);
+  for (let i = 0; i < sections.length; i++) {
+    const navLi = document.createElement('li');
 
-  let currentSection = sections[i].getAttribute('data-nav');
-  let currentSectionId = sections[i].getAttribute('id');
+    let currentSection = sections[i].getAttribute('data-nav');
+    let currentSectionId = sections[i].getAttribute('id');
 
-  navLi.innerHTML = `<a href="#${currentSectionId}">${currentSection}</a>`;
-  navBar.appendChild(navLi);
+    navLi.innerHTML = `<a href="#${currentSectionId}">${currentSection}</a>`;
+    navBar.appendChild(navLi);
 
-  navLi.addEventListener('click', () => {
-    scrollToAnchor();
-  });
-}
+    navLi.addEventListener('click', () => {
+      scrollToAnchor();
+    });
+  }
+};
+
+document.addEventListener('DOMContentLoaded', addNav);
 
 // Add class 'active' to section when near top of viewport
 //http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
@@ -42,11 +74,11 @@ for (let i = 0; i < sections.length; i++) {
 function isElementInViewport(el) {
   var rect = el.getBoundingClientRect();
   return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
+    rect.top > 0 &&
+    rect.left > 0 &&
+    rect.bottom <
       (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    rect.right < (window.innerWidth || document.documentElement.clientWidth)
   );
 }
 
