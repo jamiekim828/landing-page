@@ -20,18 +20,6 @@
 const sections = document.querySelectorAll('section');
 const navBar = document.querySelector('#navbar__list');
 
-/**
- * End Global Variables†
- * Start Helper Functions
- *
- */
-
-/**
- * End Helper Functions
- * Begin Main Functions
- *
- */
-
 // build the nav
 for (let i = 0; i < sections.length; i++) {
   const navLi = document.createElement('li');
@@ -123,11 +111,6 @@ scrollToTopButton.onclick = function(e) {
   e.preventDefault();
   scrollToTop();
 };
-/**
- * End Main Functions
- * Begin Events
- *
- */
 
 // Build menu
 // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_right
