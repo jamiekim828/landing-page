@@ -65,7 +65,7 @@ window.addEventListener('scroll', function() {
 
 function scrollToAnchor() {
   let anchorlinks = document.querySelectorAll('a[href^="#"]');
-  console.log('scroll smooth');
+
   for (const anchorlink of anchorlinks) {
     anchorlink.addEventListener('click', e => {
       let hashanchor = anchorlink.getAttribute('href');
@@ -100,7 +100,7 @@ window.addEventListener('scroll', scrollFunc);
 
 const scrollToTop = () => {
   const c = document.documentElement.scrollTop || document.body.scrollTop;
-  console.log('scroll to top');
+
   if (c > 0) {
     window.requestAnimationFrame(scrollToTop);
     window.scrollTo(0, c - c / 10);
@@ -138,7 +138,6 @@ for (let i = 0; i < text.length; i++) {
 menuButton.addEventListener('click', myFunction());
 
 function myFunction() {
-  console.log('hello');
   document.getElementById('myDropdown').classList.toggle('show');
 }
 window.onclick = function(event) {
